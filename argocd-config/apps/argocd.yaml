@@ -13,7 +13,7 @@ spec:
     name: in-cluster
   project: infrastructure
   source:
-    repoURL: git@github.com:dixneuf19/training-cicd.git
+    repoURL: https://github.com/dixneuf19/training-cicd.git
     targetRevision: HEAD
     path: apps/argocd
   syncPolicy:

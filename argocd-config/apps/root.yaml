@@ -4,7 +4,7 @@ metadata:
   name: root
   namespace: argocd
 spec:
-  project: default
+  project: infrastructure
 
   source:
     repoURL: https://github.com/dixneuf19/training-cicd.git

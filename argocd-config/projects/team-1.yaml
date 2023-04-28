@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: team-1
+  namespace: argocd
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Team 1 project
+
+  # Allow manifests to deploy only from team-1 repo
+  sourceRepos:
+  - https://github.com/dixneuf19/team-1.git
+
+  # Only permit applications to deploy to the team-1 namespace in the same cluster
+  destinations:
+  - namespace: team-1
+    name: in-cluster
+
+  # Deny all cluster-scoped resources from being created
+  clusterResourceWhitelist: []
+
+  # Deny team-1 to create whatever they want in their namespace
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  # Only apps from team-1 namespace can use this project
+  sourceNamespaces: ["team-1"]

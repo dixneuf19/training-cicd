@@ -17,6 +17,6 @@ argo-cd:
         - /
     ingressGrpc:
       enabled: false
-  config:
+  configs:
     params:
       "application.namespaces": "argocd,team-*"

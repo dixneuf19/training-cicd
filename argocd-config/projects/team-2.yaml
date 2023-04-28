@@ -11,7 +11,7 @@ spec:
 
   # Allow manifests to deploy only from team-2 repo
   sourceRepos:
-  - https://github.com/dixneuf19/team-2.git
+  - https://github.com/dixneuf19/training-cicd-team-2.git
 
   # Only permit applications to deploy to the team-2 namespace in the same cluster
   destinations:
